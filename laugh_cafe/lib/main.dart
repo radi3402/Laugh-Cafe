@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp(),));
@@ -670,7 +670,7 @@ class NavigationPage extends StatelessWidget {
                         heroTag: 'button1',
                         // padding: EdgeInsets.all(20),
                         onPressed: (){
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => FunnyPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ExplorePage()));
                         },
                         backgroundColor: Colors.blueGrey,
                         label: Text('      Explore        🔭 ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
