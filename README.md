@@ -1,2 +1,2 @@
 # Laugh-Cafe
-- [ ] Navigation pane with options
+- [x] (Concept Finished)Navigation-pane with options
