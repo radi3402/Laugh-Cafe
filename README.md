@@ -1,4 +1,6 @@
 # Laugh-Cafe
 - [x] (Concept Finished)Navigation-pane with options
-- [ ] Add login and registration page utilizing Auth0
-- [ ] Edit icons/images
+- [x] Add login and registration page utilizing Auth0
+- [x] Edit icons/images
+- [ ] Finalize icons/images
+- [ ] Customize login and sync auth login with current widgets
