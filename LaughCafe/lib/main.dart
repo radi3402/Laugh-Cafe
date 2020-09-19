@@ -1676,7 +1676,7 @@ class SillyPage extends StatefulWidget {
 
 class _SillyPageState extends State<SillyPage> {
   List<String>memeImages = [
-    'https://i.redd.it/0zykle8dhzn51.png',
+    'https://imageproxy.ifunny.co/crop:x-20,resize:320x,crop:x800,quality:90x75/images/dbf4cf30771d178ab1a6ab237f780e9759c6cb471fc9edbacdc1d518e8f11c1a_1.jpg',
     'https://i.redd.it/s5zlsroxhxn51.png',
     'https://media.tenor.com/images/c21883c04f37e7b0af0e0b2a09d281bb/tenor.gif',
   ];
@@ -2616,7 +2616,7 @@ class NavigationPage extends StatelessWidget {
                         heroTag: 'button2',
                         // padding: EdgeInsets.all(20),
                         onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalProfilePage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SubscriberListPage()));
                         },
                         backgroundColor: Colors.blueGrey[900],
                         label: Text( ' Subscriptions    🔔', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
@@ -2633,7 +2633,6 @@ class NavigationPage extends StatelessWidget {
                     margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
                     child: FlatButton(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-
                         padding: EdgeInsets.all(19),
                         onPressed: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
@@ -2652,7 +2651,9 @@ class NavigationPage extends StatelessWidget {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
                         padding: EdgeInsets.all(15),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalProfilePage()));
+                        },
                         color: Colors.blueGrey[50],
                         child: Icon(
                           Icons.assignment_ind,
@@ -2719,12 +2720,12 @@ class NavigationPage extends StatelessWidget {
 
 
 
-class PersonalProfilePage extends StatefulWidget {
+class SubscriberListPage extends StatefulWidget {
   @override
-  _PersonalProfilePageState createState() => _PersonalProfilePageState();
+  _SubscriberListPageState createState() => _SubscriberListPageState();
 }
 
-class _PersonalProfilePageState extends State<PersonalProfilePage> {
+class _SubscriberListPageState extends State<SubscriberListPage> {
   int subNum1 = 0;
   int n = 0;
   final List<String> userNameList = [
@@ -2977,6 +2978,67 @@ class _ChatPageState extends State<ChatPage> {
     );
   }
 }
+
+
+class PersonalProfilePage extends StatefulWidget {
+  @override
+  _PersonalProfilePageState createState() => _PersonalProfilePageState();
+}
+
+class _PersonalProfilePageState extends State<PersonalProfilePage> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                    colors: [
+                      Colors.grey,
+                      Colors.blueGrey[900],
+                    ]
+                )
+            ),
+          ),
+          Container(
+            height: 180,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('https://live.staticflickr.com/4586/38356245336_6b439c3843_b.jpg'),
+                fit: BoxFit.fill
+              ),
+            ),
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 120, 0, 0),
+                height: 120,
+                width: 120,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 3,
+                  ),
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: NetworkImage('https://upload.wikimedia.org/wikipedia/en/9/93/Man_Alive_King_Krule.jpg'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 
 
 
