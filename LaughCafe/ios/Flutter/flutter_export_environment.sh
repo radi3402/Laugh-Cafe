@@ -1,8 +1,8 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
 export "FLUTTER_ROOT=/Users/ys/Desktop/flutter"
-export "FLUTTER_APPLICATION_PATH=/Users/ys/Desktop/Laugh-Cafe/laugh_cafe"
-export "FLUTTER_TARGET=/Users/ys/Desktop/Laugh-Cafe/laugh_cafe/lib/main.dart"
+export "FLUTTER_APPLICATION_PATH=/Users/ys/Desktop/Laugh-Cafe/LaughCafe"
+export "FLUTTER_TARGET=/Users/ys/Desktop/Laugh-Cafe/LaughCafe/lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "OTHER_LDFLAGS=$(inherited) -framework Flutter"

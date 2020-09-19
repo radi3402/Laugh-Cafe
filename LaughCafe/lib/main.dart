@@ -2962,22 +2962,71 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  List<String>memeImages = [
-    'https://filmdaily.co/wp-content/uploads/2020/07/cleanmeme-lede-1300x1244.jpg',
-    'https://cdn.dumpaday.com/wp-content/uploads/2020/04/when-you-have-a-lack-of-taste.jpg',
-    'https://www.hellomagazine.com/imagenes/healthandbeauty/health-and-fitness/2020040187313/funniest-memes-about-self-isolation/0-419-388/meme-zoom-z.jpg',
-  ];
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat'),
+        title: Text('Chatrooms'),
         // centerTitle: true,
         backgroundColor: Colors.blueGrey[900],
       ),
+      body: Column(
+        children: [
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            child: FlatButton(
+              // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+
+              padding: EdgeInsets.all(50),
+              onPressed: (){},
+              color: Colors.blueGrey[50],
+              child: Text( '💬 Dank Memes.......', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black)),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            child: FlatButton(
+              // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+
+              padding: EdgeInsets.all(50),
+              onPressed: (){},
+              color: Colors.blueGrey[50],
+              child: Text( '💬 Trending Games...', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black)),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            child: FlatButton(
+              // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+
+              padding: EdgeInsets.all(50),
+              onPressed: (){},
+              color: Colors.blueGrey[50],
+              child: Text( '💬 Funny Shows.......', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.black)),
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
+            child: FlatButton(
+              // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+
+              padding: EdgeInsets.all(50),
+              onPressed: (){},
+              color: Colors.blueGrey[50],
+              child: Text( '💬 Mildly Infuriating...', style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black)),
+            ),
+          ),
+
+        ],
+      ),
+
     );
   }
 }
+
 
 
 class PersonalProfilePage extends StatefulWidget {
