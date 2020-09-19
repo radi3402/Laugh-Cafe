@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:share/share.dart';
+// import 'package:share/share.dart';
 
 void main() {
   runApp(MaterialApp(home: MyApp(),));
@@ -455,7 +455,7 @@ class _MainPageState extends State<MainPage> {
                      ),
                      GestureDetector(
                        onTap: (){
-                         Share.share(memeImages[0]);
+                         // Share.share(memeImages[0]);
                        },
                        child: Container(
                          margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
@@ -531,7 +531,7 @@ class _MainPageState extends State<MainPage> {
                      ),
                      GestureDetector(
                        onTap: (){
-                         Share.share(memeImages[1]);
+                         // Share.share(memeImages[1]);
                        },
                        child: Container(
                          margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
@@ -607,7 +607,7 @@ class _MainPageState extends State<MainPage> {
                      ),
                      GestureDetector(
                        onTap: (){
-                         Share.share('holla');
+                         // Share.share('holla');
                        },
                        child: Container(
                          margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
