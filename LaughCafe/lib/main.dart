@@ -3089,5 +3089,198 @@ class _PersonalProfilePageState extends State<PersonalProfilePage> {
 }
 
 
+class PersonalProfilePage extends StatefulWidget {
+  @override
+  _PersonalProfilePageState createState() => _PersonalProfilePageState();
+}
+
+class _PersonalProfilePageState extends State<PersonalProfilePage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Stack(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                    colors: [
+                      Colors.grey,
+                      Colors.blueGrey[900],
+                    ]
+                )
+            ),
+          ),
+          Container(
+            height: 180,
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage('https://live.staticflickr.com/4586/38356245336_6b439c3843_b.jpg'),
+                fit: BoxFit.fill
+              ),
+            ),
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(0,70,0,0),
+                child: Text('UserName', style: TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.bold),),
+              ),
+            ],
+          ),
+          Row(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                margin: EdgeInsets.fromLTRB(0, 120, 0, 0),
+                height: 120,
+                width: 120,
+                decoration: BoxDecoration(
+                  border: Border.all(
+                    color: Colors.white,
+                    width: 3,
+                  ),
+                  shape: BoxShape.circle,
+                  image: DecorationImage(
+                    image: NetworkImage('https://upload.wikimedia.org/wikipedia/en/9/93/Man_Alive_King_Krule.jpg'),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(20,195,0,0),
+            child: Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Icon(Icons.mood, color: Colors.white,),
+                Container(
+                  margin: EdgeInsets.only(left: 15),
+                  child: Text('1K Likes', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),)
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(0,200,20,0),
+            child: Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Container(
+                    margin: EdgeInsets.only(left: 15),
+                    child: Text('30 Subscribers', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 15),)
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 430,
+            margin: EdgeInsets.fromLTRB(0, 250, 0, 0),
+            child: GridView.count(
+              padding: EdgeInsets.all(15),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              crossAxisCount: 2,
+              children: [
+                GestureDetector(
+                  onTap: (){
+                    print('pressed');
+                    setState(() {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => DisplayMeme1()));
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      image: DecorationImage(
+                        image: NetworkImage('https://i.pinimg.com/originals/dd/43/98/dd4398d986933b277575dea5c314a3b2.jpg'),
+                        fit: BoxFit.fill,
+                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage('https://www.bingeclock.com/memes/spongebob-squarepants___said_the_same_thing_twice.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage('https://image-aws-us-west-2.vsco.co/080e47/95362960/5c55a6cfd31cf77a6797c086/vsco5c55a6d0bda90.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage('https://i.imgur.com/XQALKju_d.webp?maxwidth=728&fidelity=grand'),
+                      fit: BoxFit.fill,
+                    ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage('https://i.redd.it/50qbh2ysdoi51.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage('https://cdn.guff.com/site_0/media/33000/32013/items/96cb958e5d33540b37ead313.jpg'),
+                      fit: BoxFit.fill,
+                    ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+class DisplayMeme1 extends StatefulWidget {
+  @override
+  _DisplayMeme1State createState() => _DisplayMeme1State();
+}
+
+class _DisplayMeme1State extends State<DisplayMeme1> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage('https://i.pinimg.com/originals/dd/43/98/dd4398d986933b277575dea5c314a3b2.jpg'),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
 
 
