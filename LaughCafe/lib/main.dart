@@ -696,7 +696,9 @@ class ExplorePage extends StatelessWidget {
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
                             padding: EdgeInsets.all(20),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => CringePage()));
+                            },
                             color: Colors.blueGrey[900],
                             child: Text('Cringe', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
                         ),
@@ -707,7 +709,9 @@ class ExplorePage extends StatelessWidget {
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
                             padding: EdgeInsets.all(20),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => SillyPage()));
+                            },
                             color: Colors.blueGrey[900],
                             child: Text('Silly', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
                         ),
@@ -722,7 +726,9 @@ class ExplorePage extends StatelessWidget {
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
                             padding: EdgeInsets.all(20),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => DarkPage()));
+                            },
                             color: Colors.blueGrey[900],
                             child: Text('Dark', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
                         ),
@@ -733,7 +739,9 @@ class ExplorePage extends StatelessWidget {
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
                             padding: EdgeInsets.all(20),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => SuperSillyPage()));
+                            },
                             color: Colors.blueGrey[900],
                             child: Text('SUPER Silly', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
                         ),
@@ -748,7 +756,9 @@ class ExplorePage extends StatelessWidget {
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
                             padding: EdgeInsets.all(20),
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => ExperimentalPage()));
+                            },
                             color: Colors.blueGrey[900],
                             child: Text('Experimental', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
                         ),
@@ -771,23 +781,1574 @@ class ExplorePage extends StatelessWidget {
     );
   }
 }
-
+// funny page
 class FunnyPage extends StatefulWidget {
   @override
   _FunnyPageState createState() => _FunnyPageState();
 }
 
 class _FunnyPageState extends State<FunnyPage> {
+  List<String>memeImages = [
+    'https://filmdaily.co/wp-content/uploads/2020/07/cleanmeme-lede-1300x1244.jpg',
+    'https://cdn.dumpaday.com/wp-content/uploads/2020/04/when-you-have-a-lack-of-taste.jpg',
+    'https://www.hellomagazine.com/imagenes/healthandbeauty/health-and-fitness/2020040187313/funniest-memes-about-self-isolation/0-419-388/meme-zoom-z.jpg',
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
             title: Text('Funny'),
-            backgroundColor: Colors.brown
-        )
+            // centerTitle: true,
+            backgroundColor: Colors.blueGrey[900],
+        ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height - 90,
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          scrollDirection: Axis.vertical,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[0]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[0]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[1]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[1]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[2]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share('holla');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],//memeImages.map((images) => buildCarousel(images)).toList(),
+        ),
+      ),
     );
   }
 }
+
+//Cringe Explore tab
+class CringePage extends StatefulWidget {
+  @override
+  _CringePageState createState() => _CringePageState();
+}
+
+class _CringePageState extends State<CringePage> {
+  List<String>memeImages = [
+    'https://images7.memedroid.com/images/UPLOADED758/5c535ca9ae87e.jpeg',
+    'https://cdn.ebaumsworld.com/mediaFiles/picture/604025/85226984.png',
+    'https://i.kym-cdn.com/photos/images/original/001/813/333/258.jpg',
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Cringe'),
+        backgroundColor: Colors.blueGrey[900],
+      ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height - 90,
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          scrollDirection: Axis.vertical,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[0]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[0]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[1]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[1]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[2]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share('holla');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],//memeImages.map((images) => buildCarousel(images)).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+//Dark Explore tab
+class DarkPage extends StatefulWidget {
+  @override
+  _DarkPageState createState() => _DarkPageState();
+}
+
+class _DarkPageState extends State<DarkPage> {
+  List<String>memeImages = [
+    'https://i.pinimg.com/474x/d6/cb/00/d6cb008bc1291154467fd223ec8df556.jpg',
+    'https://i.redd.it/9s6977sdcxn51.jpg',
+    'https://i.imgur.com/28gDhu0.png',
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Dark'),
+        backgroundColor: Colors.blueGrey[900],
+      ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height - 90,
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          scrollDirection: Axis.vertical,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[0]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[0]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[1]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[1]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[2]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share('holla');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],//memeImages.map((images) => buildCarousel(images)).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+
+//Silly Explore tab
+class SillyPage extends StatefulWidget {
+  @override
+  _SillyPageState createState() => _SillyPageState();
+}
+
+class _SillyPageState extends State<SillyPage> {
+  List<String>memeImages = [
+    'https://i.redd.it/0zykle8dhzn51.png',
+    'https://i.redd.it/s5zlsroxhxn51.png',
+    'https://i.redd.it/j1caskz3c0o51.jpg',
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Silly'),
+        backgroundColor: Colors.blueGrey[900],
+      ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height - 90,
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          scrollDirection: Axis.vertical,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[0]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[0]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[1]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[1]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[2]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share('holla');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],//memeImages.map((images) => buildCarousel(images)).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+//Super Silly Explore tab
+class SuperSillyPage extends StatefulWidget {
+  @override
+  _SuperSillyPageState createState() => _SuperSillyPageState();
+}
+
+class _SuperSillyPageState extends State<SuperSillyPage> {
+  List<String>memeImages = [
+    'https://thumbs.gfycat.com/ThirdShabbyAlligator-size_restricted.gif',
+    'https://media1.tenor.com/images/cf59aa24b8d9c4a0eec3a152bb55baab/tenor.gif?itemid=16513499',
+    'https://i.imgur.com/oKK3GIa.jpg',
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Super Silly'),
+        backgroundColor: Colors.blueGrey[900],
+      ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height - 90,
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          scrollDirection: Axis.vertical,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[0]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[0]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[1]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[1]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[2]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share('holla');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],//memeImages.map((images) => buildCarousel(images)).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+//Experimental; Explore tab
+class ExperimentalPage extends StatefulWidget {
+  @override
+  _ExperimentalPageState createState() => _ExperimentalPageState();
+}
+
+class _ExperimentalPageState extends State<ExperimentalPage> {
+  List<String>memeImages = [
+    'https://i.redd.it/cdukviugezn51.jpg',
+    'https://i.pinimg.com/originals/8a/6a/9d/8a6a9d94f4770522eb88cadb845749d5.gif',
+    'https://i.redd.it/nrllawmd60o51.png',
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Super Silly'),
+        backgroundColor: Colors.blueGrey[900],
+      ),
+      body: Container(
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height - 90,
+        child: ListView(
+          padding: EdgeInsets.all(0),
+          scrollDirection: Axis.vertical,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[0]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[0]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[1]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share(memeImages[1]);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Row(mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.all(10),
+                  width: 45,
+                  height: 45,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
+                  child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
+                ),
+                Container(
+                  margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  child: OutlineButton(
+                    color: Colors.brown,
+                    onPressed: (){},
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30))
+                    ),
+                    child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                  ),
+                ),
+              ],
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              height: 465,
+              child: Image(
+                image: NetworkImage('${memeImages[2]}'),
+                fit: BoxFit.fill,
+              ),
+            ),
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: Colors.blueGrey[900],
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.favorite, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.comment, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: (){
+                      // Share.share('holla');
+                    },
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
+                      color: Colors.blueGrey[900],
+                      child: Icon(Icons.share, color: Colors.white, size: 45,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],//memeImages.map((images) => buildCarousel(images)).toList(),
+        ),
+      ),
+    );
+  }
+}
+
 
 class NavigationPage extends StatelessWidget {
   @override
