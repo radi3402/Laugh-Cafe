@@ -2867,7 +2867,7 @@ class _CommentPageState extends State<CommentPage> {
           ),
         ),
         Container(
-          width: 330,
+          width: 310,
           child: Card(
             margin: EdgeInsets.fromLTRB(16, 16, 16, 16),
             child: Padding(padding: EdgeInsets.all(12),
@@ -2918,7 +2918,7 @@ class _CommentPageState extends State<CommentPage> {
                     });
                   }, child: Container(margin: EdgeInsets.only(left: 10), child: Icon(Icons.add_circle_outline, size: 30, color: Colors.white,))),
                   Container(
-                    width: 350,
+                    width: 310,
                       margin: EdgeInsets.all(10),
                       child: TextField(
                         controller: myController,
