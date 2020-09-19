@@ -3029,65 +3029,6 @@ class _ChatPageState extends State<ChatPage> {
 
 
 
-class PersonalProfilePage extends StatefulWidget {
-  @override
-  _PersonalProfilePageState createState() => _PersonalProfilePageState();
-}
-
-class _PersonalProfilePageState extends State<PersonalProfilePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.bottomRight,
-                    end: Alignment.topLeft,
-                    colors: [
-                      Colors.grey,
-                      Colors.blueGrey[900],
-                    ]
-                )
-            ),
-          ),
-          Container(
-            height: 180,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage('https://live.staticflickr.com/4586/38356245336_6b439c3843_b.jpg'),
-                fit: BoxFit.fill
-              ),
-            ),
-          ),
-          Row(mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                margin: EdgeInsets.fromLTRB(0, 120, 0, 0),
-                height: 120,
-                width: 120,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.white,
-                    width: 3,
-                  ),
-                  shape: BoxShape.circle,
-                  image: DecorationImage(
-                    image: NetworkImage('https://upload.wikimedia.org/wikipedia/en/9/93/Man_Alive_King_Krule.jpg'),
-                    fit: BoxFit.fill,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 
 class PersonalProfilePage extends StatefulWidget {
   @override
