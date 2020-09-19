@@ -2635,7 +2635,9 @@ class NavigationPage extends StatelessWidget {
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
                         padding: EdgeInsets.all(19),
-                        onPressed: (){},
+                        onPressed: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ChatPage()));
+                        },
                         color: Colors.blueGrey[50],
                         child: Icon(
                           Icons.chat_bubble_outline,
@@ -2952,7 +2954,29 @@ class _CommentPageState extends State<CommentPage> {
   }
 }
 
+//chat page
+class ChatPage extends StatefulWidget {
+  @override
+  _ChatPageState createState() => _ChatPageState();
+}
 
+class _ChatPageState extends State<ChatPage> {
+  List<String>memeImages = [
+    'https://filmdaily.co/wp-content/uploads/2020/07/cleanmeme-lede-1300x1244.jpg',
+    'https://cdn.dumpaday.com/wp-content/uploads/2020/04/when-you-have-a-lack-of-taste.jpg',
+    'https://www.hellomagazine.com/imagenes/healthandbeauty/health-and-fitness/2020040187313/funniest-memes-about-self-isolation/0-419-388/meme-zoom-z.jpg',
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Chat'),
+        // centerTitle: true,
+        backgroundColor: Colors.blueGrey[900],
+      ),
+    );
+  }
+}
 
 
 
