@@ -445,7 +445,9 @@ class _MainPageState extends State<MainPage> {
                        ),
                      ),
                      GestureDetector(
-                       onTap: (){},
+                       onTap: (){
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => CommentPage()));
+                       },
                        child: Container(
                          margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
                          color: Colors.blueGrey[900],
@@ -2635,6 +2637,120 @@ class _PersonalProfilePageState extends State<PersonalProfilePage> {
             child: ListView(
               children: userNameList.map((names) => buildSubBars(names)).toList(),
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+
+
+//Comment Page for Posts 
+class CommentPage extends StatefulWidget {
+  @override
+  _CommentPageState createState() => _CommentPageState();
+}
+
+class _CommentPageState extends State<CommentPage> {
+  final myController = TextEditingController();
+  List<String> userComments = ['Lol nice meme. Keep them coming.'];
+
+  @override
+  Widget commentCard(comment){
+    return Row(
+      children: [
+        Container(
+          margin: EdgeInsets.fromLTRB(10, 0, 10, 5),
+          width: 40.0,
+          height: 40.0,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            image: DecorationImage(image: NetworkImage('https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png'), fit: BoxFit.fill),
+          ),
+        ),
+        Container(
+          width: 330,
+          child: Card(
+            margin: EdgeInsets.fromLTRB(16, 16, 16, 16),
+            child: Padding(padding: EdgeInsets.all(12),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text(comment),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey[900],
+        title: Text('Comment Section', style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),),
+        centerTitle: true,
+        leading: Icon(Icons.chat),
+      ),
+      body: Stack(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                    colors: [
+                      Colors.grey,
+                      Colors.blueGrey[900],
+                    ]
+                )
+            ),
+          ),
+          Column(
+            children: [
+              Row(
+                children: [
+                  GestureDetector(onTap: (){
+                    setState(() {
+                      userComments.add(myController.text);
+                      print(myController.text);
+                    });
+                  }, child: Container(margin: EdgeInsets.only(left: 10), child: Icon(Icons.add_circle_outline, size: 30, color: Colors.white,))),
+                  Container(
+                    width: 350,
+                      margin: EdgeInsets.all(10),
+                      child: TextField(
+                        controller: myController,
+                        decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(10),
+                          hintText: '  Comment here...',
+                          filled: true,
+                          fillColor: Colors.white,
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30))
+                          ),
+                        ),
+                      ),
+                  ),
+                ],
+              ),
+              Container(
+                height: 525,
+                child: ListView(
+                  children: [
+                    Container(
+                      child: Column(
+                        children: userComments.map((comment) => commentCard(comment)).toList(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ],
       ),
