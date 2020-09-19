@@ -23,8 +23,8 @@ class _MyAppState extends State<MyApp> {
                     begin: Alignment.bottomRight,
                     end: Alignment.topLeft,
                     colors: [
-                      Colors.brown[900],
-                      Colors.brown[300],
+                      Colors.grey,
+                      Colors.blueGrey[900],
                     ]
                 )
             ),
@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                  child: Text('Log In', style: TextStyle(color: Colors.brown[700], fontSize: 20),),
+                  child: Text('Log In', style: TextStyle(color: Colors.blueGrey[900], fontSize: 20),),
                 ),
               ),
               Container(
@@ -74,7 +74,7 @@ class _MyAppState extends State<MyApp> {
                   },
                   color: Colors.white,
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                  child: Text('Sign Up', style: TextStyle(color: Colors.brown[700], fontSize: 20),),
+                  child: Text('Sign Up', style: TextStyle(color: Colors.blueGrey[900], fontSize: 20),),
                 ),
               )
             ],
@@ -96,19 +96,20 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[500],
+
       body: ListView(
         children: [
           Stack(
             children: [
               Container(
+                height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.bottomRight,
                         end: Alignment.topLeft,
                         colors: [
-                          Colors.brown[900],
-                          Colors.brown[300],
+                          Colors.grey,
+                          Colors.blueGrey[900],
                         ]
                     )
                 ),
@@ -201,7 +202,7 @@ class _SignUpPageState extends State<SignUpPage> {
                         },
                         color: Colors.white,
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                        child: Text('Sign Up', style: TextStyle(color: Colors.brown[700], fontSize: 20),),
+                        child: Text('Sign Up', style: TextStyle(color:Colors.blueGrey[900], fontSize: 20),),
                       ),
                     ),
                   ),
@@ -227,20 +228,19 @@ class _LogInPageState extends State<LogInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.brown[500],
       body: ListView(
         children: [
           Stack(
             children: [
-
               Container(
+                height: MediaQuery.of(context).size.height,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.bottomRight,
                         end: Alignment.topLeft,
                         colors: [
-                          Colors.brown[900],
-                          Colors.brown[300],
+                          Colors.grey,
+                          Colors.blueGrey[900],
                         ]
                     )
                 ),
@@ -331,7 +331,7 @@ class _LogInPageState extends State<LogInPage> {
                       },
                       color: Colors.white,
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                      child: Text('Log In', style: TextStyle(color: Colors.brown[700], fontSize: 20),),
+                      child: Text('Log In', style: TextStyle(color: Colors.blueGrey[900], fontSize: 20),),
                     ),
                     ),
                   ),
@@ -361,7 +361,7 @@ class _MainPageState extends State<MainPage> {
   Widget buildCarousel(images){
     return Column(
       children: [
-        Row(
+        Row(mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
               margin: EdgeInsets.all(10),
@@ -377,17 +377,17 @@ class _MainPageState extends State<MainPage> {
             ),
             Container(
               margin: EdgeInsets.fromLTRB(5, 0, 0, 0),
-              child: Text('UserName', style: TextStyle(color: Colors.brown, fontSize: 16, fontWeight: FontWeight.bold),),
+              child: Text('UserName', style: TextStyle(color: Colors.blueGrey[900], fontSize: 16, fontWeight: FontWeight.bold),),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(160, 5, 10, 5),
+              margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
               child: OutlineButton(
                 color: Colors.brown,
                 onPressed: (){},
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30))
                 ),
-                child: Text('Subscribe', style: TextStyle(color: Colors.brown),),
+                child: Text('Subscribe', style: TextStyle(color: Colors.blueGrey[900],),),
               ),
             ),
           ],
@@ -402,14 +402,14 @@ class _MainPageState extends State<MainPage> {
         ),
         Container(
           width: MediaQuery.of(context).size.width,
-          color: Colors.brown,
+          color: Colors.blueGrey[900],
           child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               GestureDetector(
                 onTap: (){},
                 child: Container(
                   margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
-                  color: Colors.brown,
+                  color: Colors.blueGrey[900],
                   child: Icon(Icons.favorite, color: Colors.white, size: 45,
                   ),
                 ),
@@ -418,7 +418,7 @@ class _MainPageState extends State<MainPage> {
                 onTap: (){},
                 child: Container(
                   margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
-                  color: Colors.brown,
+                  color: Colors.blueGrey[900],
                   child: Icon(Icons.comment, color: Colors.white, size: 45,
                   ),
                 ),
@@ -427,7 +427,7 @@ class _MainPageState extends State<MainPage> {
                 onTap: (){},
                 child: Container(
                   margin: EdgeInsets.fromLTRB(10, 10, 0, 10),
-                  color: Colors.brown,
+                  color: Colors.blueGrey[900],
                   child: Icon(Icons.share, color: Colors.white, size: 45,
                   ),
                 ),
@@ -450,7 +450,7 @@ class _MainPageState extends State<MainPage> {
             child: Container(
               width: MediaQuery.of(context).size.width,
               height: 90,
-              color: Colors.brown,
+              color: Colors.blueGrey[900],
               child: Row(mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Container(
@@ -484,115 +484,134 @@ class ExplorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[500],
       appBar: AppBar(
         title: Text('Explore 🔭'),
         centerTitle: true,
-        backgroundColor: Colors.brown,
+        backgroundColor: Colors.blueGrey[900],
       ),
-      body: Stack(
+      body: ListView(
         children: [
-          Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.bottomRight,
-                    end: Alignment.topLeft,
-                    colors: [
-                      Colors.brown[900],
-                      Colors.brown[100],
-                    ]
-                )
-            ),
-          ),
-          Column(
+          Stack(
             children: [
-              Row( mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
-                    child: FlatButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-                        padding: EdgeInsets.all(20),
-                        onPressed: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => FunnyPage()));
-                        },
-                        color: Colors.blueGrey,
-                        child: Text('Funny', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
-                    ),
-                  )
-                ],
+              Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.bottomRight,
+                        end: Alignment.topLeft,
+                        colors: [
+                        Colors.grey,
+                        Colors.blueGrey[700],
+                        ]
+                    )
+                ),
               ),
-              Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
+              Column(
+                children: [
                   Container(
-                    margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
-                    child: FlatButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-
-                        padding: EdgeInsets.all(20),
-                        onPressed: (){},
-                        color: Colors.amber,
-                        child: Text('Cringe', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue))
+                    margin: EdgeInsets.only(top: 10),
+                    width: MediaQuery.of(context).size.width -10,
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(30))
+                        ),
+                        fillColor: Colors.white,
+                        filled: true,
+                        prefixIcon: Icon(Icons.search),
+                      ),
                     ),
                   ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
-                    child: FlatButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                  Row( mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
+                        child: FlatButton(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+                            padding: EdgeInsets.all(20),
+                            onPressed: (){
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => FunnyPage()));
+                            },
+                            color: Colors.blueGrey[900],
+                            child: Text('Funny', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
+                        ),
+                      )
+                    ],
+                  ),
+                  Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
+                        child: FlatButton(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
-                        padding: EdgeInsets.all(20),
-                        onPressed: (){},
-                        color: Colors.amber,
-                        child: Text('Silly', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue))
-                    ),
+                            padding: EdgeInsets.all(20),
+                            onPressed: (){},
+                            color: Colors.blueGrey[900],
+                            child: Text('Cringe', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
+                        child: FlatButton(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+
+                            padding: EdgeInsets.all(20),
+                            onPressed: (){},
+                            color: Colors.blueGrey[900],
+                            child: Text('Silly', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
+                        child: FlatButton(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+
+                            padding: EdgeInsets.all(20),
+                            onPressed: (){},
+                            color: Colors.blueGrey[900],
+                            child: Text('Dark', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
+                        ),
+                      ),
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
+                        child: FlatButton(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+
+                            padding: EdgeInsets.all(20),
+                            onPressed: (){},
+                            color: Colors.blueGrey[900],
+                            child: Text('SUPER Silly', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row( mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
+                        child: FlatButton(
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+
+                            padding: EdgeInsets.all(20),
+                            onPressed: (){},
+                            color: Colors.blueGrey[900],
+                            child: Text('Experimental', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
+                        ),
+                      )
+                    ],
                   ),
                 ],
               ),
-              Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
-                    child: FlatButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
 
-                        padding: EdgeInsets.all(20),
-                        onPressed: (){},
-                        color: Colors.amber,
-                        child: Text('Dark', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue))
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 25, 0, 0),
-                    child: FlatButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-
-                        padding: EdgeInsets.all(20),
-                        onPressed: (){},
-                        color: Colors.amber,
-                        child: Text('SUPER Silly', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue))
-                    ),
-                  ),
-                ],
-              ),
-              Row( mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Container(
-                    margin: EdgeInsets.fromLTRB(0, 40, 0, 0),
-                    child: FlatButton(
-                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
-
-                        padding: EdgeInsets.all(20),
-                        onPressed: (){},
-                        color: Colors.amber,
-                        child: Text('Experimental', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.blue))
-                    ),
-                  )
-                ],
-              ),
             ],
+
           ),
-
         ],
-
       ),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () {},
@@ -625,9 +644,13 @@ class NavigationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('< < Navigation > >'),
+        title: Text(' Cafe Menu '),
         centerTitle: true,
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.blueGrey[900],
+        leading: IconButton(icon: Icon(Icons.local_cafe, color: Colors.white, size: 25,), onPressed: (){},),
+        actions: [
+          IconButton(icon: Icon(Icons.local_cafe, color: Colors.white, size: 25,), onPressed: (){},)
+        ],
       ),
       body: Stack(
         children: [
@@ -637,8 +660,8 @@ class NavigationPage extends StatelessWidget {
                     begin: Alignment.bottomRight,
                     end: Alignment.topLeft,
                     colors: [
-                      Colors.grey,
                       Colors.blueGrey[900],
+                      Colors.grey,
                     ]
                 )
             ),
@@ -654,9 +677,9 @@ class NavigationPage extends StatelessWidget {
                         heroTag: "button3",
                         // padding: EdgeInsets.all(20),
                         onPressed: (){
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => FunnyPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => MainPage()));
                         },
-                        backgroundColor: Colors.blueGrey,
+                        backgroundColor: Colors.blueGrey[900],
                         label: Text('Today\'s Special   ★', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
                     ),
                   ),
@@ -670,9 +693,9 @@ class NavigationPage extends StatelessWidget {
                         heroTag: 'button1',
                         // padding: EdgeInsets.all(20),
                         onPressed: (){
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => FunnyPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => ExplorePage()));
                         },
-                        backgroundColor: Colors.blueGrey,
+                        backgroundColor: Colors.blueGrey[900],
                         label: Text('      Explore        🔭 ', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
                     ),
                   ),
@@ -686,20 +709,20 @@ class NavigationPage extends StatelessWidget {
                         heroTag: 'button2',
                         // padding: EdgeInsets.all(20),
                         onPressed: (){
-                          // Navigator.push(context, MaterialPageRoute(builder: (context) => FunnyPage()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => PersonalProfilePage()));
                         },
-                        backgroundColor: Colors.blueGrey,
+                        backgroundColor: Colors.blueGrey[900],
                         label: Text( ' Subscriptions    🔔', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white))
                     ),
                   ),
                 ],
               ),
+
               Row( mainAxisAlignment: MainAxisAlignment.spaceAround,
                 mainAxisSize: MainAxisSize.max,
                 // mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
-
                     margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
                     child: FlatButton(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
@@ -709,7 +732,7 @@ class NavigationPage extends StatelessWidget {
                         color: Colors.blueGrey[50],
                         child: Icon(
                           Icons.chat_bubble_outline,
-                          color: Colors.teal[300],
+                          color: Colors.blueGrey[900],
                           size: 30.0,
                         )
                     ),
@@ -724,7 +747,7 @@ class NavigationPage extends StatelessWidget {
                         color: Colors.blueGrey[50],
                         child: Icon(
                           Icons.assignment_ind,
-                          color: Colors.teal[300],
+                          color: Colors.blueGrey[900],
                           size: 35.0,
                         )
                     ),
@@ -739,11 +762,18 @@ class NavigationPage extends StatelessWidget {
                         color: Colors.blueGrey[50],
                         child: Icon(
                           Icons.add,
-                          color: Colors.teal[300],
+                          color: Colors.blueGrey[900],
                           size: 45.0,
                         )
                     ),
                   ),
+                ],
+              ),
+              Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Container(margin: EdgeInsets.fromLTRB(0, 15, 0, 0),  child: Text(' Chat', style: TextStyle(fontSize: 15, color: Colors.white),)),
+                  Container(margin: EdgeInsets.fromLTRB(0, 15, 0, 0),child: Text('  Profile',style: TextStyle(fontSize: 15, color: Colors.white))),
+                  Container(margin: EdgeInsets.fromLTRB(0, 15, 0, 0),child: Text('Create',style: TextStyle(fontSize: 15, color: Colors.white))),
                 ],
               ),
             ],
@@ -777,6 +807,127 @@ class NavigationPage extends StatelessWidget {
 //     );
 //   }
 // }
+
+
+
+class PersonalProfilePage extends StatefulWidget {
+  @override
+  _PersonalProfilePageState createState() => _PersonalProfilePageState();
+}
+
+class _PersonalProfilePageState extends State<PersonalProfilePage> {
+  int subNum1 = 0;
+  int n = 0;
+  final List<String> userNameList = [
+    'UserProfileOne',
+    'UserProfileTwo',
+    'UserProfileThree',
+    'UserProfileFour',
+    'UserProfileFive',
+    'UserProfileSix',
+    'UserProfileSeven',
+    'UserProfileEight',
+    'UserProfileNine',
+    'UserProfileTen',
+    'UserProfileEleven',
+    'UserProfileTwelve',
+  ];
+  Widget buildSubBars(names){
+    n+=1;
+    subNum1 = n;
+    return Row(mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Column(
+          children: [
+            GestureDetector(
+              onTap: (){
+                print('sub select $subNum1');
+              },
+              child: Container(
+                margin: EdgeInsets.only(bottom: 5),
+                decoration: BoxDecoration(
+                    color: Colors.grey[400],
+                  borderRadius: BorderRadius.all(Radius.circular(15))
+                ),
+
+                width: MediaQuery.of(context).size.width,
+                height: 70,
+                child: Row(
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(left: 15),
+                      height: 45,
+                      width: 45,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        shape: BoxShape.circle,
+                        image: DecorationImage(
+                          image: NetworkImage('https://images.squarespace-cdn.com/content/5b47794f96d4553780daae3b/1531516790942-VFS0XZE207OEYBLVYR99/profile-placeholder.jpg?content-type=image%2Fjpeg'),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 15),
+                      child: Text(names, style: TextStyle(color: Colors.blueGrey[900], fontSize: 15, fontWeight: FontWeight.bold),),
+                    ),
+                    Container(
+                      margin: EdgeInsets.only(left: 15),
+                      width: 120,
+                      child: OutlineButton(
+                        color: Colors.brown,
+                        onPressed: (){},
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30))
+                        ),
+                        child: Text('Unsubscribe', style: TextStyle(color: Colors.blueGrey[900],),),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Subscriptions 🔔', style: TextStyle(color: Colors.white),),
+        centerTitle: true,
+        backgroundColor: Colors.blueGrey[900],
+      ),
+      body: Stack(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                    colors: [
+                      Colors.blueGrey[900],
+                      Colors.grey,
+                    ]
+                )
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: ListView(
+              children: userNameList.map((names) => buildSubBars(names)).toList(),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 
 
 
