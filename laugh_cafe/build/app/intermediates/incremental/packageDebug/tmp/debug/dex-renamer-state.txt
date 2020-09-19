@@ -1,4 +1,4 @@
-#Fri Sep 18 16:37:26 PDT 2020
+#Fri Sep 18 19:15:19 PDT 2020
 base.0=/Users/ys/Desktop/Laugh-Cafe/laugh_cafe/build/app/intermediates/dex/debug/mergeDexDebug/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
