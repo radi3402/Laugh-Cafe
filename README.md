@@ -7,4 +7,4 @@
 - [ ] Add Custom navigation widget?
 
 
-Find Submitted Repo [Here](https://github.com/YScloud22/Laugh-Cafe.git)
+Find Submitted and Latest Updated Repo [Here](https://github.com/YScloud22/Laugh-Cafe.git)
